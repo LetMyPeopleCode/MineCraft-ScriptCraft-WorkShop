@@ -1,4 +1,4 @@
-#Learning JavaScript in Minecraft Workshop Files
+# Learning JavaScript in Minecraft Workshop Files
 
 Kids love Minecraft, so instead of trying to teach them JS in the browser or in Node, why not do it in Minecraft where they can get immediate feedback in the game itself.
 
