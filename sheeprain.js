@@ -9,7 +9,7 @@ function sheeprain(params, player){
     thisdrone.up(40);
     thisdrone.chkpt('first');
     //set a randomly long time between sheep and call the dropper
-    tov = setTimeout(dropper, intervaler());-+
+    tov = setTimeout(dropper, intervaler());
 }
 
 
