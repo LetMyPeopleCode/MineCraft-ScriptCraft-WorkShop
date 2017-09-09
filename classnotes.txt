@@ -1,0 +1,103 @@
+These are my class notes that I showed in my teaching workshop. I will expand upon them as time permits.
+
+Quick Wow Demo
+	
+Let's make a mess
+	jsp boom
+	jsp boom 50
+	jsp bighole
+
+How to Reset Your World
+	Let's clean up our mess
+	
+Variables
+	numbers
+		math operators - +=/*
+	strings - echo()
+		what needs to be in quotes (string contents, but not string names)
+	addition / concatenation
+	
+Comparison operators
+	= vs == vs ===
+	! vs != vs !==
+	&& || 
+
+WEEK 2
+
+DOWNLOAD AND INSTALL WORKSHOP FILES
+	Go to github.com/yiddishninja
+	Go into minecraft scriptcraft workshop
+	download zip file
+	unzip it into scriptcraft plugins folder
+	js refresh();
+	try jsp boom
+
+Difference between js & jsp
+	js requires mod power and executes any JS you give it
+	jsp is for everyone and executes commands you've defined
+	demo jsp boom
+	we'll walk through the boom code later.
+
+What is a function
+	name, arguments, code
+		example of using a function: dancefloor(5); 
+		Show them dancefloor in drone/contrib
+	
+	calling
+		function blankWorld(salutation) { echo( salutation + " World!" );}
+		
+	writing one in a file
+		exports.greet = function( player ) {
+			echo( player, 'Hi ' + player.name);
+		}
+		//NOTE HOW THIS ASSIGNS TO A VARIABLE
+
+DID WE GET THIS FAR?
+		
+	use multiple arguments...
+		exports.greet = function (salutation, player)...
+
+Using if/then
+	make an extension called greetif
+	use greet as the base
+	make var with myName = "GregBulmash"
+	add if after the echo to tell me I'm cool
+	add else after that to tell everyone else they are not
+	demo if, else if
+
+LOOP THE LOOP
+
+	The while loop
+		while(a true condition){
+			perform this code		
+		}
+		
+		exports.spiderDeath = function(player){
+			var bob = doSpawn('spider', player.location);
+			while(bob.getHealth > 0){
+				echo("Bob's Health Is: " + bob.getHealth, player);
+				bob.setHealth(bob.getHealth - .3);
+			}
+		}
+		
+		for(var i = 0; i < 10; i++){
+			let's do this 10 times;
+		}
+
+	Sheeprain walkthrough.
+	
+=======================================================
+
+Exploring the JavaDocs
+
+https://hub.spigotmc.org/javadocs/spigot/
+
+If we look at the World interface, we see different methods. Look at all the different ways to invoke create explosion.
+
+I've found the easiest way to get access to the world interface is through the self object. It contains a pointer to the world you're in and you can use that pointer to access the world's properties and methods.
+
+/js self.world.createExplosion(self.location, 5, true)
+
+The create explosion wants a location at which to create it. You can either give it explicit X, Y, and Z coordinates, or you can simply give it a location object by using self.location. Then you specify a power level. Then you can optionally specify whether the explosion should set blocks on fire.
+
+dospawn to a horse. Look for leash holder and passenger setters.
